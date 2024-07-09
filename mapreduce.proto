@@ -1,0 +1,20 @@
+
+syntax="proto3";
+
+service Master{
+    rpc input_spliter(Text) returns (Text);
+
+    rpc work_done(Text) returns (Text);
+}
+
+service Worker{
+    rpc do_map(Text) returns (Text);
+
+    rpc do_reduce(Text) returns (Text);
+
+}
+
+message Text{
+    string data = 1;
+    string metadata = 2;
+}
